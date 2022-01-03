@@ -9,10 +9,20 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
+"@js-joda/core@4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@js-joda/core/-/core-4.2.1.tgz#990a6167f12cc504440117c49afb00003e7077f0"
+  integrity sha512-/PX1W+qCLfSYjHV3HtEuH6vaGuTtjvfA8ERt3xib8MmNkE6jSieFi/BZGPzHAbWLTgPpdNDQVDi4HgV1G7VCDg==
+
 "@js-joda/locale_en-us@2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@js-joda/locale_en-us/-/locale_en-us-2.0.1.tgz#2f56645955fabd97279954a30756fc367e44cdb5"
   integrity sha512-7af7QST8F7sk08xpv//rWNFBHRLFaj4XbYNBXT4V8QgpmwzY3TJorZ5Ok/L2s3Djf2/qB7kBb7zIg6Ox+RNrjg==
+
+"@js-joda/timezone@2.8.0":
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/@js-joda/timezone/-/timezone-2.8.0.tgz#5424265c6dded1281eb5c104167eae208edb55e1"
+  integrity sha512-ewNYIveVviDztEnVtyPvJsrhIlut5jO73HB5SVss2ErmannjENOaNMjeuVsQ5+XSc+x3PpKT2eyCF0SJSPxr3g==
 
 "@semantic-ui-react/event-stack@^3.1.0":
   version "3.1.1"

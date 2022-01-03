@@ -1,51 +1,54 @@
 {:paths   ["src/shared"]
 
- :deps    {com.fulcrologic/fulcro                 {:mvn/version "3.2.8"}
-           com.fulcrologic/fulcro-rad             {:mvn/version "0.0.11-alpha"}
-           com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "0.0.9-alpha"}
+ :deps    {com.fulcrologic/fulcro                 {:mvn/version "3.5.9"}
+           com.fulcrologic/fulcro-rad             {:mvn/version "1.1.0-RC14"}
+           com.fulcrologic/fulcro-rad-semantic-ui {:mvn/version "1.2.3"}
            com.fulcrologic/fulcro-i18n            {:mvn/version "0.0.4-alpha"}
-           com.wsscode/pathom                     {:mvn/version "2.2.31"}
-           edn-query-language/eql                 {:mvn/version "0.0.9"}
-           com.taoensso/encore                    {:mvn/version "2.120.0"}
-           com.fulcrologic/guardrails             {:mvn/version "0.0.12"}
+           com.wsscode/pathom                     {:mvn/version "2.4.0"}
+           edn-query-language/eql                 {:mvn/version "1.0.2"}
+           com.taoensso/encore                    {:mvn/version "3.20.0"}
+           com.fulcrologic/guardrails             {:mvn/version "1.1.10"}
+           cljc.java-time/cljc.java-time          {:mvn/version "0.1.18"}
 
            ;; Performance checks
-           com.taoensso/tufte                     {:mvn/version "2.1.0"}
+           com.taoensso/tufte                     {:mvn/version "2.2.0"}
 
            ;; Server
-           mount                                  {:mvn/version "0.1.12"}
-           hiccup                                 {:mvn/version "1.0.5"}
-           ring/ring-defaults                     {:mvn/version "0.3.2"}
-           ring/ring-core                         {:mvn/version "1.8.1"}
+           mount/mount                            {:mvn/version "0.1.16"}
+           hiccup/hiccup                          {:mvn/version "1.0.5"}
+           ring/ring-defaults                     {:mvn/version "0.3.3"}
+           ring/ring-core                         {:mvn/version "1.9.4"}
            org.immutant/web                       {:mvn/version "2.1.10"
                                                    :exclusions  [ch.qos.logback/logback-classic]}
 
            ;; Unified logging for server
-           com.taoensso/timbre                    {:mvn/version "4.10.0"}
-           org.slf4j/log4j-over-slf4j             {:mvn/version "1.7.30"} ; auto sends log4j to slf4j
-           org.slf4j/jul-to-slf4j                 {:mvn/version "1.7.30"} ; auto sends java.util.logging to slf4j
-           org.slf4j/jcl-over-slf4j               {:mvn/version "1.7.30"} ; auto-sends java.common.logging to slf4j
-           com.fzakaria/slf4j-timbre              {:mvn/version "0.3.19"} ; hooks slf4j to timbre
+           com.taoensso/timbre                    {:mvn/version "5.1.2"}
+           org.slf4j/log4j-over-slf4j             {:mvn/version "1.7.32"} ; auto sends log4j to slf4j
+           org.slf4j/jul-to-slf4j                 {:mvn/version "1.7.32"} ; auto sends java.util.logging to slf4j
+           org.slf4j/jcl-over-slf4j               {:mvn/version "1.7.32"} ; auto-sends java.common.logging to slf4j
+           com.fzakaria/slf4j-timbre              {:mvn/version "0.3.21"} ; hooks slf4j to timbre
 
-           org.clojure/clojurescript              {:mvn/version "1.10.758"}
-           org.clojure/clojure                    {:mvn/version "1.10.1"}}
+           org.clojure/clojurescript              {:mvn/version "1.10.896"}
+           org.clojure/clojure                    {:mvn/version "1.10.3"}
+
+           potemkin/potemkin                      {:mvn/version "0.4.5"}}
 
  :aliases {:test      {:extra-paths ["src/shared-tests"]
-                       :extra-deps  {fulcrologic/fulcro-spec {:mvn/version "3.1.5"}
-                                     dev-local-tu            {:mvn/version "0.1.0"}}}
+                       :extra-deps  {fulcrologic/fulcro-spec {:mvn/version "3.1.12"}
+                                     dev-local-tu            {:mvn/version "0.2.2"}}}
 
            :sql       {:extra-paths ["src/sql" "src/sql-tests"]
-                       :extra-deps  {com.h2database/h2              {:mvn/version "1.4.199" :exclusions [org.slf4j/slf4j-nop]}
+                       :extra-deps  {com.h2database/h2              {:mvn/version "2.0.204" :exclusions [org.slf4j/slf4j-nop]}
                                      com.fulcrologic/fulcro-rad-sql {:mvn/version "0.0.2-alpha"}}}
 
            :datomic   {:extra-paths ["src/datomic" "src/datomic-tests"]
-                       :extra-deps  {com.datomic/dev-local              {:mvn/version "0.9.184"}
-                                     com.fulcrologic/fulcro-rad-datomic {:mvn/version "1.0.0"}}}
+                       :extra-deps  {com.datomic/dev-local              {:mvn/version "1.0.238"}
+                                     com.fulcrologic/fulcro-rad-datomic {:mvn/version "1.0.12"}}}
            :run-tests {:main-opts  ["-m" "kaocha.runner"]
-                       :extra-deps {lambdaisland/kaocha {:mvn/version "1.0.629"}}}
+                       :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.972"}}}
 
            :dev       {:extra-paths ["src/dev" "resources"]
-                       :extra-deps  {thheller/shadow-cljs                {:mvn/version "2.8.110"}
-                                     com.fulcrologic/semantic-ui-wrapper {:mvn/version "1.0.1"}
-                                     binaryage/devtools                  {:mvn/version "1.0.0"}
-                                     org.clojure/tools.namespace         {:mvn/version "0.3.1"}}}}}
+                       :extra-deps  {thheller/shadow-cljs                {:mvn/version "2.16.10"}
+                                     com.fulcrologic/semantic-ui-wrapper {:mvn/version "2.0.1"}
+                                     binaryage/devtools                  {:mvn/version "1.0.4"}
+                                     org.clojure/tools.namespace         {:mvn/version "1.2.0"}}}}}
